@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout – Temy Crochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement-bar">New Arrivals for you <a href="shop.html">Shop Now</a> | <a href="refund-policy.html">Refund Policy</a></div>
+  <header class="navbar">
+    <div class="logo"><span class="logo-icon">✦</span><span class="logo-text">Temy Crochet<span class="logo-sub">HANDMADE CROCHET OUTFITS</span></span></div>
+    <nav class="nav-links desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="About.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="icon-btn">👤</a>
+      <a href="#" class="icon-btn cart-btn">🛒 <span class="cart-count">0</span></a>
+      <button class="currency-switcher-btn">🇳🇬 NGN <span class="arrow">▼</span></button>
+      <button class="hamburger" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="size-guide.html">Size Guide</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="About.html">About Crochetelo</a>
+  </div>
+
+  <section style="padding:60px; max-width:1000px; margin:40px auto;">
+    <div class="checkout-grid" style="display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start;">
+      <form id="checkoutForm" class="checkout-form" novalidate style="background:#fff; padding:24px; border-radius:12px; border:1px solid #ede3d8;">
+        <h1 style="margin-bottom:8px">Payment</h1>
+        <p style="color:var(--muted); margin-bottom:12px;">Mock checkout — integrate a payment gateway to accept real payments. Complete the form and click <strong>Pay</strong> to simulate payment.</p>
+
+        <label>Full name</label>
+        <input name="fullName" placeholder="Your full name" required />
+        <div class="invalid-msg">Please enter your full name.</div>
+
+        <label style="margin-top:8px">Email address</label>
+        <input name="email" type="email" placeholder="you@example.com" required />
+        <div class="invalid-msg">Please enter a valid email.</div>
+
+        <label style="margin-top:8px">Phone number</label>
+        <input name="phone" type="tel" placeholder="+2348012345678" pattern="^\+?\d{7,15}$" title="Include country code, digits only" required />
+        <div class="invalid-msg">Enter phone with country code, digits only.</div>
+
+        <label style="margin-top:8px">Shipping address</label>
+        <input name="address" placeholder="Street, City, Country" required />
+        <div class="invalid-msg">Please enter a shipping address.</div>
+
+        <div style="display:flex; gap:12px; margin-top:8px;">
+          <div style="flex:1">
+            <label>City</label>
+            <input name="city" placeholder="City" required />
+            <div class="invalid-msg">City required.</div>
+          </div>
+          <div style="width:140px">
+            <label>Postal / ZIP</label>
+            <input name="postal" placeholder="Postal" required />
+            <div class="invalid-msg">Postal code required.</div>
+          </div>
+        </div>
+
+        <button id="payBtn" type="submit" class="btn-primary" style="margin-top:18px;" disabled>Pay</button>
+        <div id="checkoutResult" style="margin-top:12px; color:var(--muted);"></div>
+      </form>
+
+      <aside class="order-summary" style="padding:18px; border-radius:12px; background:#fff; border:1px solid #ede3d8;">
+        <h3 style="margin-top:0">Order Summary</h3>
+        <div id="summaryItems" style="display:grid; gap:10px; margin-top:12px;"></div>
+        <div id="summaryEmpty" style="color:var(--muted); margin-top:8px; display:none;">Your cart is empty.</div>
+        <div id="summaryTotal" style="margin-top:14px; font-weight:700;">Total: ₦ 0.00</div>
+      </aside>
+    </div>
+  </section>
+
+  <style>
+    .invalid-msg { color: var(--accent); font-size: 0.9rem; display: none; margin-top:4px; }
+    input:invalid + .invalid-msg { display: block; }
+    input { padding:10px; border-radius:8px; border:1px solid #e8e0d6; margin-top:6px; width:100%; }
+    .checkout-grid h1 { font-size:1.5rem; }
+    .summary-item { display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed #f0e8dc; }
+  </style>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="logo-icon">✦</span><span>Temy Crochet</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="custom-order.html">Custom Order</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <p class="footer-copy">© 2026 – Temy Crochet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const form = document.getElementById('checkoutForm');
+      const payBtn = document.getElementById('payBtn');
+      const result = document.getElementById('checkoutResult');
+      const summaryItems = document.getElementById('summaryItems');
+      const summaryTotal = document.getElementById('summaryTotal');
+      const summaryEmpty = document.getElementById('summaryEmpty');
+
+      function readCart(){
+        try { return JSON.parse(localStorage.getItem('siteCart') || '{}'); } catch(e){ return {}; }
+      }
+
+      function formatN(amount){ return '₦ ' + Number(amount).toFixed(2); }
+
+      function renderSummary(){
+        const cart = readCart();
+        const items = Object.values(cart);
+        summaryItems.innerHTML = '';
+        if (!items.length){ summaryEmpty.style.display = 'block'; summaryTotal.textContent = 'Total: ₦ 0.00'; payBtn.disabled = true; return; }
+        summaryEmpty.style.display = 'none';
+        let total = 0;
+        items.forEach(it => {
+          const line = document.createElement('div');
+          line.className = 'summary-item';
+          const lineTotal = (it.price || 0) * (it.qty || 1);
+          total += lineTotal;
+          line.innerHTML = `<div><strong>${it.name}</strong><div style="color:var(--muted); font-size:0.95rem;">Qty: ${it.qty}</div></div><div style="text-align:right">${formatN(lineTotal)}</div>`;
+          summaryItems.appendChild(line);
+        });
+        summaryTotal.textContent = 'Total: ' + formatN(total);
+        validateForm();
+      }
+
+      function validateForm(){
+        const cart = readCart();
+        const hasItems = Object.keys(cart).length > 0;
+        const valid = form.checkValidity();
+        payBtn.disabled = !(valid && hasItems);
+      }
+
+      // show live validation state
+      form.querySelectorAll('input').forEach(inp => inp.addEventListener('input', validateForm));
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        const cart = readCart();
+        if (!Object.keys(cart).length){ result.textContent = 'Your cart is empty.'; return; }
+        // simulate processing
+        payBtn.disabled = true; const prev = payBtn.textContent; payBtn.textContent = 'Processing…';
+        setTimeout(() => {
+          payBtn.textContent = 'Paid';
+          result.style.color = 'green';
+          result.textContent = 'Payment simulated — thank you! A confirmation email will be sent.';
+          try { localStorage.removeItem('siteCart'); document.querySelectorAll('.cart-count').forEach(el => el.textContent = 0); } catch(e){}
+          renderSummary();
+        }, 1100);
+      });
+
+      // initial render
+      renderSummary();
+      // also re-render when cart changes in other tabs
+      window.addEventListener('storage', (e) => { if (e.key === 'siteCart') renderSummary(); });
+    })();
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

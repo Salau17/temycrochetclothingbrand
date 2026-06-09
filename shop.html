@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – Temy Crochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .shop-hero { background: var(--dark); color: var(--white); text-align: center; padding: 80px 40px; }
+    .shop-hero h1 { font-family: var(--font-display); font-size: 3rem; }
+    .shop-hero p { color: #b8a890; margin-top: 12px; }
+    .shop-grid-section { padding: 60px; }
+    .shop-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 36px;
+    }
+    @media(max-width:600px){ .shop-grid-section{padding:24px;} }
+  </style>
+</head>
+<body>
+  <div class="announcement-bar">New Arrivals for you <a href="shop.html">Shop Now</a> | <a href="refund-policy.html">Refund Policy</a></div>
+  <header class="navbar">
+    <div class="logo"><span class="logo-icon">✦</span>
+      <span class="logo-text">Temy Crochet<span class="logo-sub">HANDMADE CROCHET OUTFITS</span></span>
+    </div>
+    <nav class="nav-links desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html" style="color:var(--accent)">Shop</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="About.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="icon-btn">👤</a>
+      <a href="cart.html" class="icon-btn cart-btn">🛒 <span class="cart-count">0</span></a>
+      <button class="currency-switcher-btn">🇳🇬 NGN <span class="arrow">▼</span></button>
+      <button class="hamburger" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a><a href="shop.html">Shop</a>
+    <a href="custom-order.html">Custom Order</a><a href="size-guide.html">Size Guide</a>
+    <a href="contact.html">Contact Us</a><a href="About.html">About</a>
+  </div>
+
+  <section class="shop-hero">
+    <h1>Our Collection</h1>
+    <p>Every piece is handmade with love, just for you</p>
+  </section>
+
+  <!-- Product details modal (populated via script.js) -->
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="product-modal-backdrop" data-close></div>
+    <div class="product-modal-inner" role="dialog" aria-modal="true">
+      <button class="product-modal-close" data-close>✕</button>
+      <div class="product-modal-grid">
+        <div class="product-modal-thumb"><img src="" alt=""/></div>
+        <div class="product-modal-info">
+          <h2 class="modal-title">Product name</h2>
+          <p class="modal-subtitle">Short subtitle</p>
+          <p class="modal-price">₦ 0</p>
+          <p class="modal-desc">Handmade crochet item. Select quantity and add to cart.</p>
+          <div class="modal-controls">
+            <label>Quantity: <input type="number" class="modal-qty" value="1" min="1"/></label>
+          </div>
+          <div class="modal-actions">
+            <button class="btn-primary modal-add">Add to cart</button>
+            <button class="btn-secondary" data-close>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="shop-grid-section">
+    <div class="filter-tabs" style="margin-bottom:40px">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="women">Women</button>
+      <button class="tab" data-filter="men">Men</button>
+      <button class="tab" data-filter="unisex">Unisex</button>
+    </div>
+    <div class="shop-grid" id="productsGrid">
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap"><img src="asset/temy-1.jpg" alt=""/><button class="wishlist-btn">♡</button></div>
+         <h3>Golden Aura Tassel</h3>
+        <p class="product-subtitle">Golden Aura Tassel Dress✨</p>
+        <p class="price">₦ 346,622.52</p>
+      </div>
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/the-celebrity-set.webp" alt="The Celebrity Set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>The Celebrity Set</h3>
+        <p class="product-subtitle">Celebrity-inspired ensemble</p>
+        <p class="price">₦ 249,568.21</p>
+      </div>
+      <div class="product-card" data-category="unisex">
+       <div class="product-img-wrap">
+          <img src="asset/earthy-tones-crochet-sweatshirt.webp" alt="Earthy Tones Crochet Sweatshirt"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Earthy Tones Crochet Sweatshirt</h3>
+        <p class="product-subtitle">Multicolor crochet squares</p>
+        <p class="price">₦ 346,622.52</p>
+      </div>
+      <div class="product-card" data-category="unisex">
+        <div class="product-img-wrap">
+          <img src="asset/unisex-granny-square-pant.webp" alt="Unisex Granny square pant"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Unisex Granny square pant</h3>
+        <p class="product-subtitle">Classic granny square design</p>
+        <p class="price">₦ 277,298.01</p>
+      </div>
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/off-white.jpeg" alt="Bloom Aura Set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Bloom Aura Set</h3>
+        <p class="product-subtitle">Bloom Aura Set🌸</p>
+        <p class="price">₦ 277,298.01</p>
+      </div>
+
+      <div class="product-card" data-category="men">
+        <div class="product-img-wrap">
+          <img src="asset/crochet-two-toned-shirt.webp" alt="Men's Vest"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Crochet Two-toned Shirt</h3>
+        <p class="product-subtitle">Two-toned crochet design</p>
+        <p class="price">₦ 221,838.41</p>
+      </div>
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/white-cowry-gown.jpeg" alt="The Côte Sirène Dress"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>The Côte Sirène</h3>
+        <p class="product-subtitle">The Côte Sirène Dress</p>
+        <p class="price">₦ 346,622.52</p>
+        </div>
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/kemy-set-custom-version.webp" alt="KEMY Set(custom version)"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>KEMY Set(custom version)</h3>
+        <p class="product-subtitle">Kemy set inspired by pregnant women</p>
+        <p class="price">₦ 291,162.91</p>
+       </div>
+
+       <div class="product-card" data-category="unisex">
+        <div class="product-img-wrap">
+          <img src="asset/unisex-granny-square-shirt.webp" alt="Unisex Granny Square Shirt"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Unisex Granny Square Shirt</h3>
+        <p class="product-subtitle">unisex Granny square Shirt</p>
+        <p class="price">₦ 263,433.11</p>
+       </div>
+
+       <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/leila-set.webp" alt="Leila set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Leila set</h3>
+        <p class="product-subtitle">Leila set</p>
+        <p class="price">₦ 249,568.21</p>
+       </div>
+
+       <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/the-celebrity-set-duo-color.webp" alt="The Celebrity Set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>The Celebrity Set</h3>
+        <p class="product-subtitle">The Celebrity Set</p>
+        <p class="price">₦ 263,433.11</p>
+        </div>
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/floral-set.webp" alt="Floral set🌸"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Floral set🌸</h3>
+        <p class="product-subtitle">Floral set🌸</p>
+        <p class="price">₦ 214,905.96</p>
+        </div>
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/florie-dress.webp" alt="🌸Florie dress🌸"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>🌸Florie dress🌸</h3>
+        <p class="product-subtitle">🌸Florie dress🌸</p>
+        <p class="price">₦ ₦207,973.51</p>
+        </div>
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/lavender-luxe-dress.webp" alt="💜Lavender luxe dress💜"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>💜Lavender luxe dress💜</h3>
+        <p class="product-subtitle">💜Lavender luxe dress💜</p>
+        <p class="price">₦ 249,568.21</p>
+        </div>
+
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/cute-flared-skirt.webp" alt="Cute Flared skirt"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Cute Flared skirt</h3>
+        <p class="product-subtitle">Cute Flared skirt</p>
+        <p class="price">₦ 166,378.81</p>
+        </div>
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/florie-xtra-dress.webp" alt="🌸Florie Xtra Dress🌸"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>🌸Florie Xtra Dress🌸</h3>
+        <p class="product-subtitle">🌸Florie Xtra Dress🌸</p>
+        <p class="price">₦ 249,568.21</p>
+        </div>
+
+        <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/temys-round-top-ruffle-hat-pattern.webp" alt="Temy’s Round-top Ruffle Hat Pattern"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Temy’s Round-top Ruffle Hat Pattern</h3>
+        <p class="product-subtitle">Temy’s Round-top Ruffle Hat Pattern</p>
+        <p class="price">₦ 8,000</p>
+        </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="logo-icon">✦</span><span>Temy Crochet</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="custom-order.html">Custom Order</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="About.html">About</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <p class="footer-copy">© 2026 – Temy Crochet. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

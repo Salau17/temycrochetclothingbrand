@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Order – Temy Crochet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement-bar">New Arrivals for you <a href="shop.html">Shop Now</a> | <a href="refund-policy.html">Refund Policy</a></div>
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">Temy Crochet<span class="logo-sub">HANDMADE CROCHET OUTFITS</span></span>
+    </div>
+    <nav class="nav-links desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="custom-order.html" style="color: var(--accent)">Custom Order</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="About.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="icon-btn">👤</a>
+      <a href="#" class="icon-btn cart-btn">🛒 <span class="cart-count">0</span></a>
+      <button class="currency-switcher-btn">🇳🇬 NGN <span class="arrow">▼</span></button>
+      <button class="hamburger" id="menuToggle">☰</button>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="size-guide.html">Size Guide</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="About.html">About Crochetelo</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Customize your perfect crochet look.</h1>
+      <p>Tell us your style, colors, and measurements so we can craft a piece made just for you.</p>
+      <a href="#order-form" class="btn-primary">Start Your Order</a>
+    </div>
+    <div class="hero-image">
+      <img src="asset/temy-1.jpg" alt="Custom crochet design" />
+    </div>
+  </section>
+
+  <section class="section-grid" style="padding: 60px; max-width: 1100px; margin: 0 auto; gap: 32px; display: grid; grid-template-columns: 1fr 1fr;">
+    <div>
+      <h2>How custom orders work</h2>
+      <p>Every piece is handcrafted from scratch. Share your design idea, preferred color palette, timeline, and any special details. We will create a custom crochet outfit that fits your lifestyle and occasion.</p>
+      <ul class="feature-list">
+        <li><strong>One-on-one design support.</strong> We refine the look until it feels right.</li>
+        <li><strong>Made-to-measure fit.</strong> Custom sizing for your body and comfort.</li>
+        <li><strong>Quality materials.</strong> Premium yarns, durable stitches, and lasting texture.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Perfect for:</h2>
+      <p>Bridal events, date nights, special gifts, festivals, or a signature everyday set. Custom orders are ideal if you want a unique crochet look with your own personal details.</p>
+      <div class="custom-order-cards" style="display:grid; gap:18px;">
+        <div class="product-card" style="padding:24px; border:1px solid #ede3d8; border-radius:20px; background:#fff;">
+          <h3>Special occasions</h3>
+          <p>Bold textures, statement sleeves, and refined details for your most memorable events.</p>
+        </div>
+        <div class="product-card" style="padding:24px; border:1px solid #ede3d8; border-radius:20px; background:#fff;">
+          <h3>Everyday luxury</h3>
+          <p>Comfortable silhouettes and soft yarns made to wear again and again.</p>
+        </div>
+        <div class="product-card" style="padding:24px; border:1px solid #ede3d8; border-radius:20px; background:#fff;">
+          <h3>Seasonal pieces</h3>
+          <p>Layered sets, cozy sweaters, and breezy dresses designed for your climate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order-form" class="section" style="padding: 0 60px 60px; max-width: 900px; margin: 0 auto;">
+    <h2>Submit your custom order</h2>
+    <p>Fill out the form below and we’ll reach out to confirm your design and timeline.</p>
+    <form class="contact-form">
+      <label for="name">Full name</label>
+      <input id="name" name="name" type="text" placeholder="Your name" />
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" />
+      <label for="details">What would you like made?</label>
+      <textarea id="details" name="details" rows="5" placeholder="Describe your custom outfit, colors, and style" ></textarea>
+      <div style="display:grid; gap:18px; grid-template-columns:1fr 1fr;">
+        <div>
+          <label for="measurements">Measurements</label>
+          <input id="measurements" name="measurements" type="text" placeholder="Bust, waist, hips, length" />
+        </div>
+        <div>
+          <label for="deadline">Ready by</label>
+          <input id="deadline" name="deadline" type="text" placeholder="Event date or deadline" />
+        </div>
+      </div>
+      <label for="budget">Budget range</label>
+      <input id="budget" name="budget" type="text" placeholder="Example: ₦ 45,000 - ₦ 80,000" />
+      <button type="submit" class="btn-primary" style="margin-top:16px;">Send Request</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo"><span class="logo-icon">✦</span><span>Temy Crochet</span></div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="custom-order.html">Custom Order</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <span>Social Links</span>
+        <div class="social-icons"><a href="#">f</a><a href="#">🐦</a><a href="#">in</a><a href="#">📷</a></div>
+      </div>
+      <p class="footer-copy">© 2026 – Temy Crochet. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

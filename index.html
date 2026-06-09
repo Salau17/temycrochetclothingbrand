@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temy Crochet Outfits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="announcement-bar">
+    New Arrivals for you <a href="shop.html">Shop Now</a> | <a href="refund-policy.html">Refund Policy</a>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <span class="logo-text">Temy Crochet<span class="logo-sub">HANDMADE CROCHET OUTFITS</span></span>
+    </div>
+    <nav class="nav-links desktop-nav">
+      <a href="index.html" style="color: var(--accent);">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="custom-order.html">Custom Order</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="About.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="icon-btn">👤</a>
+      <a href="cart.html" class="icon-btn cart-btn">🛒 <span class="cart-count">0</span></a>
+      <button class="currency-switcher-btn">🇳🇬 NGN <span class="arrow">▼</span></button>
+      <button class="hamburger" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="size-guide.html">Size Guide</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="About.html">About Temy Crochet</a>
+    <div class="mobile-menu-bottom">
+      <a href="cart.html" class="cart-link">🛒 Cart</a>
+      <a href="About.html">👤 About Us</a>
+      <a href="wishlist.html">♡ Wishlist</a>
+      <a href="account.html">👤 Account | Login</a>
+    </div>
+    <div class="mobile-socials">
+      <a href="#">in</a>
+      <a href="#">📷</a>
+      <a href="#">f</a>
+      <a href="#">🐦</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span>Sustainable,</span><br/><span>Handmade <em>fashion</em></span></h1>
+      <p>Handmade with love, Just for you</p>
+      <a href="shop.html" class="btn-primary">Shop Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="asset/temy-1.jpg" alt="Temy Crochet featured look"/>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <h2>Top Classic Products</h2>
+    <div class="filter-tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="women">Women</button>
+      <button class="tab" data-filter="men">Men</button>
+      <button class="tab" data-filter="unisex">Unisex</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/temy-1.jpg" alt="Golden Aura Tassel"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Golden Aura Tassel</h3>
+        <p class="product-subtitle">Golden Aura Tassel Dress ✨</p>
+        <p class="price">₦ 346,622.52</p>
+      </div>
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/the-celebrity-set.webp" alt="The Celebrity Set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>The Celebrity Set</h3>
+        <p class="product-subtitle">Celebrity-inspired ensemble</p>
+        <p class="price">₦ 249,568.21</p>
+      </div>
+
+      <div class="product-card" data-category="unisex">
+        <div class="product-img-wrap">
+          <img src="asset/earthy-tones-crochet-sweatshirt.webp" alt="Earthy Tones Crochet Sweatshirt"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Earthy Tones Crochet Sweatshirt</h3>
+        <p class="product-subtitle">Multicolor crochet squares</p>
+        <p class="price">₦ 346,622.52</p>
+      </div>
+
+      <div class="product-card" data-category="unisex">
+        <div class="product-img-wrap">
+          <img src="asset/unisex-granny-square-pant.webp" alt="Unisex Granny square pant"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Unisex Granny square pant</h3>
+        <p class="product-subtitle">Classic granny square design</p>
+        <p class="price">₦ 277,298.01</p>
+      </div>
+
+      <div class="product-card" data-category="women">
+        <div class="product-img-wrap">
+          <img src="asset/off-white.jpeg" alt="Bloom Aura Set"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Bloom Aura Set</h3>
+        <p class="product-subtitle">Bloom Aura Set🌸</p>
+        <p class="price">₦ 277,298.01</p>
+      </div>
+
+      <div class="product-card" data-category="men">
+        <div class="product-img-wrap">
+          <img src="asset/crochet-two-toned-shirt.webp" alt="Men's Vest"/>
+          <button class="wishlist-btn">♡</button>
+        </div>
+        <h3>Crochet Two-toned Shirt</h3>
+        <p class="product-subtitle">Two-toned crochet design</p>
+        <p class="price">₦ 221,838.41</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="see-more-section">
+    <div class="see-more-inner">
+      <div class="logo-watermark">✦ Temy Crochet</div>
+      <h2>Want to see More?</h2>
+      <a href="shop.html" class="btn-secondary">See Catalogue</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">✦</span>
+        <span>Temy Crochet</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="custom-order.html">Custom Order</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="About.html">About Temy Crochet</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <div class="footer-socials">
+        <span>Social Links</span>
+        <div class="social-icons">
+          <a href="#">f</a>
+          <a href="#">🐦</a>
+          <a href="#">in</a>
+          <a href="#">📷</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2026 – Temy Crochet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
